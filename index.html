@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Record Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="dashboard">
+
+        <header class="header">
+            <div>
+                <p class="label">CLASS RECORDS</p>
+                <h1>Class Record Manager</h1>
+                <p class="subtitle">
+                    Manage your class records with ease. Add, remove, and find students in your class list.
+                </p>
+            </div>
+        </header>
+
+        <section class="content">
+            <section class="card student-card">
+
+                <div class="student-header">
+
+                    <div class="section-title">
+                        <h2>Student List</h2>
+                        <p>Currently enrolled students</p>
+                    </div>
+
+                    <div class="count">
+                        <p id="studentCount">0</p>
+                        <p>Students</p>
+                    </div>
+
+                </div>
+
+                <div class="divider"></div>
+
+                <p id="studentList">
+                    <!-- Students will be displayed here -->
+                </p>
+
+            </section>
+
+
+            <!-- Operations -->
+            <section class="operations">
+
+                <!-- Add Item -->
+                <div class="card">
+
+                    <div class="section-title">
+                        <h2>Add Student</h2>
+                        <p>Add a new student using push().</p>
+                    </div>
+
+                    <div class="input-group">
+
+                        <input type="text" id="studentInput" placeholder="Student name">
+
+                        <button id="addButton">
+                            Add
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <section class="card">
+
+                    <div class="section-title">
+                        <h2>Remove Last</h2>
+                        <p>Remove the last student using pop().</p>
+                    </div>
+
+                    <button class="secondary-button" id="removeButton">
+                        Remove Last
+                    </button>
+
+                </section>
+
+
+                <!-- Find Item -->
+                <section class="card">
+
+                    <div class="section-title">
+                        <h2>Find by Index</h2>
+                        <p>Find a student using at().</p>
+                    </div>
+
+                    <div class="input-group">
+
+                        <input type="number" id="indexInput" placeholder="Index">
+
+                        <button id="findButton">
+                            Find
+                        </button>
+
+                    </div>
+
+                    <div class="result" id="findResult">
+                        Result will appear here.
+                    </div>
+
+                </section>
+
+
+                <!-- Join Items -->
+                <section class="card">
+
+                    <div class="section-title">
+                        <h2>Join Items</h2>
+                        <p>Combine students using join().</p>
+                    </div>
+
+                    <button class="secondary-button" id="joinButton">
+                        Join Items
+                    </button>
+
+                    <div class="result" id="joinResult">
+                        Result will appear here.
+                    </div>
+
+                </section>
+
+
+                <!-- Convert to String -->
+                <section class="card">
+
+                    <div class="section-title">
+                        <h2>Convert to String</h2>
+                        <p>Convert the array using toString().</p>
+                    </div>
+
+                    <button class="secondary-button" id="stringButton">
+                        Convert to String
+                    </button>
+
+                    <div class="result" id="stringResult">
+                        Result will appear here.
+                    </div>
+
+                </section>
+
+
+            </section>
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
