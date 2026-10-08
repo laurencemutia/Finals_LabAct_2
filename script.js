@@ -6,51 +6,90 @@ let studentNames = [
     "Json"
 ];
 
-function displayStudents() {
-    let studentCount = studentNames.length;
-    document.getElementById("studentList").innerHTML = "<span>Student Names:</span> <br>" + studentNames;
-    document.getElementById("studentCount").textContent = studentCount;
+
+function addStudent(arr, studentName) {
+    arr.push(studentName);
 }
 
-displayStudents();
+function removeStudent(arr) {
+    arr.pop();
+}
 
-function addStudent(arr, studentName) { arr.push(studentName); }
-function removeStudent(arr){ arr.pop(); }
-function findStudent(arr, index){ return arr.at(index) }
+function findStudent(arr, index) {
+    return arr.at(index);
+}
 
-function pushStudent(){
-    const studentName = document.getElementById("studentInput").value;
+function joinStudents(arr) {
+    return arr.join(", ");
+}
 
-    if(studentName === null || studentName.trim() === ""){ return; }
+function stringifyStudents(arr) {
+    return arr.toString();
+}
+
+function printStudentByNum(students) {
+     let listHtml = "<ol>";
+
+    for (let i = 0; i < students.length; i++) {
+        listHtml += "<li>" + students[i] + "</li>";
+    }
+
+    listHtml += "</ol>";
+    return listHtml;
+}
+
+// Display students
+function displayStudents() {
+    const studentCount = studentNames.length;
+
+    document.getElementById("studentCount").textContent = studentCount;
+
+    if (studentCount === 0) {
+        document.getElementById("studentList").innerHTML = "No students in the list.";
+    } else {
+        document.getElementById("studentList").innerHTML = "<span>Student Names:</span> <br>" + printStudentByNum(studentNames);
+    }
+}
+
+// Add Student 
+function pushStudent() {
+    const input = document.getElementById("studentInput");
+    const studentName = input.value;
+
+    if (studentName.trim() === "") {
+        return;
+    }
+
     addStudent(studentNames, studentName);
+    input.value = "";
     displayStudents();
 }
 
+// Remove Last 
 function popStudent() {
     removeStudent(studentNames);
     displayStudents();
 }
 
-function findIndex(){
-    const indexInput = document.getElementById("indexInput").value;
+// Find students by Index
+function findIndex() {
+    const indexValue = document.getElementById("indexInput").value;
     const result = document.getElementById("findResult");
-    let studentCount = studentNames.length;
 
-    console.log(typeof indexInput);
-
-    let indexInputToNum = parseInt(indexInput);
-
-    console.log(typeof indexInputToNum);
-
-    if(indexInput === null || indexInput.trim() === "") {
-        result.textContent = "Invalid index. Please try again"
+    if (indexValue.trim() === "") {
+        result.textContent = "Invalid index. Please try again";
         return;
     }
-    else if(indexInputToNum >= studentCount){
+
+    const index = parseInt(indexValue);
+    const student = findStudent(studentNames, index);
+
+    if (student === undefined) {
         result.textContent = "Student not found";
-        return;
-    }
-    else {
-        result.textContent = findStudent(studentNames, indexInput);
+    } else {
+        result.textContent = student;
     }
 }
+
+// show current students on page load
+displayStudents();
