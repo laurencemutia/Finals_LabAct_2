@@ -11,7 +11,6 @@
 <body>
 
     <main class="dashboard">
-
         <header class="header">
             <div>
                 <p class="label">CLASS RECORDS</p>
@@ -44,13 +43,11 @@
                 <p id="studentList">
                     <!-- Students will be displayed here -->
                 </p>
-
             </section>
 
 
             <!-- Operations -->
             <section class="operations">
-
                 <!-- Add Item -->
                 <div class="card">
 
@@ -63,7 +60,7 @@
 
                         <input type="text" id="studentInput" placeholder="Student name">
 
-                        <button id="addButton">
+                        <button id="addButton" onclick="pushStudent()">
                             Add
                         </button>
 
@@ -71,6 +68,7 @@
 
                 </div>
 
+                <!-- Remove -->
                 <section class="card">
 
                     <div class="section-title">
@@ -78,12 +76,11 @@
                         <p>Remove the last student using pop().</p>
                     </div>
 
-                    <button class="secondary-button" id="removeButton">
+                    <button class="secondary-button" id="removeButton" onclick="popStudent()">
                         Remove Last
                     </button>
 
                 </section>
-
 
                 <!-- Find Item -->
                 <section class="card">
@@ -97,7 +94,7 @@
 
                         <input type="number" id="indexInput" placeholder="Index">
 
-                        <button id="findButton">
+                        <button id="findButton" onclick="findIndex()">
                             Find
                         </button>
 
@@ -108,7 +105,6 @@
                     </div>
 
                 </section>
-
 
                 <!-- Join Items -->
                 <section class="card">
@@ -128,7 +124,6 @@
 
                 </section>
 
-
                 <!-- Convert to String -->
                 <section class="card">
 
@@ -146,16 +141,11 @@
                     </div>
 
                 </section>
-
-
             </section>
 
         </section>
-
     </main>
 
-
     <script src="script.js"></script>
-
 </body>
 </html>
