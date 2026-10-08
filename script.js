@@ -94,7 +94,7 @@ function findIndex() {
     const index = Number(indexValue);
 
     if(!Number.isInteger(index)){
-        result.textContent = "Index mustt be a whole number (no decimals)";
+        result.textContent = "Index must be a whole number (no decimals)";
         return;
     }
 
