@@ -1,6 +1,3 @@
-
-
-
 let studentNames = [
     "Stebs",
     "Hokage",
@@ -57,12 +54,22 @@ function displayStudents() {
 // Add Student 
 function pushStudent() {
     const input = document.getElementById("studentInput");
-    const studentName = input.value;
+    const studentName = input.value.trim();
+    const result = document.getElementById("addResult");
 
-    if (studentName.trim() === "") {
+    // Not empty
+    if (studentName === "") {
+        result.textContent = "Name is empty. Please enter a valid name.";
         return;
     }
 
+    // Letters and spaces only
+    if (!/^[A-Za-z ]+$/.test(studentName)) {
+        result.textContent = "Invalid name. Please enter letters only.";
+        return;
+    }
+
+    result.textContent = "Result will appear here.";
     addStudent(studentNames, studentName);
     input.value = "";
     displayStudents();
@@ -84,7 +91,13 @@ function findIndex() {
         return;
     }
 
-    const index = parseInt(indexValue);
+    const index = Number(indexValue);
+
+    if(!Number.isInteger(index)){
+        result.textContent = "Index mustt be a whole number (no decimals)";
+        return;
+    }
+
     const student = findStudent(studentNames, index);
 
     if (student === undefined) {
