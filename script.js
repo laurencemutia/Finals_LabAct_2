@@ -1,3 +1,6 @@
+
+
+
 let studentNames = [
     "Stebs",
     "Hokage",
@@ -90,6 +93,24 @@ function findIndex() {
         result.textContent = student;
     }
 }
+
+// Join students
+function joinStudentList() {
+    const result = document.getElementById("joinResult");
+    const joinedStudents = joinStudents(studentNames);
+
+    result.textContent = joinedStudents;
+}
+
+
+// Convert students to string
+function displayStudentString() {
+    const result = document.getElementById("stringResult");
+    const studentString = stringifyStudents(studentNames);
+
+    result.textContent = studentString;
+}
+
 
 // show current students on page load
 displayStudents();
